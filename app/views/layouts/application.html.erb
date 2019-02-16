@@ -1,14 +1,80 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Fugiii</title>
+    <title>fugiii</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+ <!-- <title>ことぶつえん</title> -->
+　　 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+　　<link rel="apple-touch-icon" href="apple-touch-icon.png" size="57x57">
+
+ <!-- /jQueryを読み込む -->
+　 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 　<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" type="text/css" />
+ 　<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
   </head>
 
   <body>
+  <header>
+    <div class="header-logo">
+      <%= link_to("fugiii","/top") %>
+    </div>
+
+    <nav class="g-nav">
+    <ul class="menu">
+
+      <li>
+        <%= link_to("note","/",class:"menu-item") %>
+      </li>
+
+      <li>
+        <%= link_to("shop","/posts/index_all",class:"menu-item") %>
+      </li>
+
+     </ul>
+     </nav>
+    <div class="sp-menu">
+      <a href="#" class="menu-trigger" onclick="return false;">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+<!-- /ハンバーガーjava開始 -->
+    <script type="text/javascript">
+      $(function() {
+      $('.menu-trigger').click(function() {
+        $(this).toggleClass('active');
+        $('.g-nav').slideToggle(400);
+      });
+    });
+    </script>
+<!-- /ハンバーガーjava終了 -->
+  </header>
+
+
+
     <%= yield %>
-  </body>
+
+
+  <footer>
+  <ul class="footer-menus">
+    <li>
+      <%= link_to("トップ","/top",class:"footer-link")  %>
+    </li>
+    <li>|</li>
+    <li>
+      <%= link_to("運営者","https://www.instagram.com/nomizuno/",class:"footer-link") %>
+    </li>
+  </ul>
+    <p class="copy-right">Copyright(c)2019 fugiii.com All Rights Reserved</p>
+</footer>
+</body>
+
 </html>
